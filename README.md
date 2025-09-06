@@ -1,27 +1,21 @@
-
 # port-congestion-demo
+![Python CI](https://github.com/haolabs/port-congestion-demo/actions/workflows/python.yml/badge.svg)
 
 Minimal FastAPI baseline that reads a small CSV and returns a numeric prediction.
 
-## Run locally
-
-1. (Optional) Create a virtualenv
-   ```bash
-   python -m venv .venv && source .venv/bin/activate
-   ```
-2. Install deps
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Launch the API
-   ```bash
-   uvicorn app:app --reload
-   ```
+## Quickstart
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app:app --reload
+```
 
 ## Endpoints
+	•	GET /health → {"ok": true}
+	•	GET /predict?port=LA&date=2026-06-01 → numeric prediction
+	•	Swagger: http://127.0.0.1:8000/docs
 
-- `GET /health`
-- `GET /predict?port=LA&date=2026-06-01` → returns baseline mean
+## Example
+curl 'http://127.0.0.1:8000/health'
+curl 'http://127.0.0.1:8000/predict?port=LA&date=2026-06-01'
 
-## Notes
-- Data lives in `data/sample.csv`.
