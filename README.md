@@ -16,6 +16,7 @@ uvicorn app:app --reload
 	•	Swagger: http://127.0.0.1:8000/docs
 
 ## Example
+```bash
 curl 'http://127.0.0.1:8000/health'
 curl 'http://127.0.0.1:8000/predict?port=LA&date=2026-06-01'
 
